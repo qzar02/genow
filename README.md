@@ -1,8 +1,9 @@
 # GENow
 GENow _deve_ ser uma ferramenta capaz de gerar código fonte à partir de especificações de modelo.
 
+![Fluxo](https://raw.githubusercontent.com/qzar02/genow/master/docs/flow.png)
 
-```mermaid
+```
 graph TD
 A[<center>ESPECIFICAÇÃO<br/>DO MODELO DE DOMINIO</center>] --> B[REST API]
 B[REST API] --> C[INSTÂNCIA DO MODELO]
@@ -10,6 +11,7 @@ C[INSTÂNCIA DO MODELO] --> E[CÓDIGO FONTE GERADO]
 D[TEMPLATES DE CÓDIGO] --> E[CÓDIGO FONTE GERADO]
 E[CÓDIGO FONTE GERADO] --> F[PACOTES DE SOFTWARE]
 ```
+
 
 O código fonte gerado pode ser para um framework especifico, uma API, ou uma configuração de instalação de software. Tudo depende dos `templates de código` que contém a _lógica_ de geração do código.
 
