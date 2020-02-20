@@ -1,2 +1,151 @@
-DOMAIN:
-  :
+table:
+  item_title: table
+  resource_methods:
+    - GET
+    - POST
+
+  schema:
+    name:
+      type: string
+      required: true
+      unique: true
+
+    columns:
+      type: list
+      schema:
+        name:
+          type: string
+        dtype:
+          type: string
+          allowed:
+            - string
+            - integer
+            - double
+            - boolean
+            - date
+            - float
+
+entity:
+  item_title: entity
+  resource_methods:
+    - GET
+    - POST
+
+  schema:
+    name:
+      type: string
+      required: true
+      unique: true
+
+    columns:
+      type: list
+      schema:
+        name:
+          type: string
+        dtype:
+          type: string
+          allowed:
+            - string
+            - integer
+            - double
+            - boolean
+            - date
+            - float
+
+dataset:
+  item_title: dataset
+  resource_methods:
+    - GET
+    - POST
+  schema:
+    name:
+      type: string
+      required: true
+      unique: true
+
+    columns:
+      type: list
+      schema:
+        name:
+          type: string
+        dtype:
+          type: string
+          allowed:
+            - string
+            - integer
+            - double
+            - boolean
+            - date
+            - float
+
+relationship:
+  item_title: relationship
+  resource_methods:
+    - GET
+    - POST
+  schema:
+    name:
+      type: string
+      required: true
+
+    source:
+      type: string
+      required: true
+
+    target:
+      type: string
+      required: true
+
+    columns:
+      type: list
+      required: true
+
+pipeline:
+  item_title: pipeline
+  resource_methods:
+    - GET
+    - POST
+  schema:
+    name:
+      type: string
+      required: true
+
+    stages:
+      type: list
+
+      schema:
+        name:
+          type: string
+          required: true
+
+        repositories:
+          type: list
+          required: true
+
+        relationships:
+          type: list
+          required: true
+
+transformation:
+  item_title: transformation
+  resource_methods:
+    - GET
+    - POST
+  schema:
+    name:
+      type: string
+      required: true
+
+    columns:
+      type: list
+      schema:
+
+        name: 
+          type: string
+          required: true
+
+        expression:
+          type: string
+          required: true
+
+

@@ -1,0 +1,52 @@
+tables:
+  - name: users
+    columns:
+      - name: id
+        dtype: integer
+      - name: email
+        dtype: string  
+
+  - name: bookings
+    columns:
+      - name: id
+        dtype: integer
+      - name: user_id
+        dtype: integer
+      - name: place_id
+        dtype: integer
+      - name: start_date
+        dtype: date
+      - name: end_date
+        dtype: date
+      - name: price_per_night
+        dtype: float
+      - name: num_nights
+        dtype: integer
+
+  - name: places
+    columns:
+      - name: id
+        dtype: integer
+      - name: host_id
+        dtype: integer
+      - name: address
+        dtype: string
+      - name: city_id
+        dtype: string
+
+  - name: reviews
+    columns:
+      - name: id
+        dtype:  integer
+      - name: booking_id
+        dtype:  integer
+      - name: rating
+        dtype:  integer
+      - name: review_body
+        dtype:  string
+
+
+  - name: hosts
+  id integer [primary key]
+  user_id integer
+}
