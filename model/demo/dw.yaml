@@ -1,4 +1,5 @@
 tables:
+
   - name: users
     columns:
       - name: id
@@ -47,6 +48,77 @@ tables:
 
 
   - name: hosts
-  id integer [primary key]
-  user_id integer
-}
+    columns:
+      - name: id
+        dtype: integer
+      - name: user_id
+        dtype: integer
+
+  - name: cities
+    columns:
+      - name: id
+        dtype: integer
+      - name: name
+        dtype: string
+      - name: country_id
+        dtype: integer
+
+  - name: country
+    columns:
+      - name: id
+        dtype: integer
+      - name: name
+        dtype: string
+      - name: continent_name
+        dtype: string
+
+relationships:
+  - name: rel_cities_x_country
+    source: cities
+    target: country
+    columns:
+      - source: country_id
+        target: id
+
+  - name: rel_places_x_hosts
+    source: places
+    target: hosts
+    columns:
+      - source: host_id
+        target: id
+
+  - name: rel_bookings_x_users
+    source: bookings
+    target: users
+    columns:
+      - source: user_id
+        target: id
+
+  - name: rel_bookings_x_places
+    source: bookings
+    target: places
+    columns:
+      - source: place_id
+        target: id
+
+  - name: rel_places_x_cities
+    source: places
+    target: cities
+    columns:
+      - source: city_id
+        target: id
+
+
+  - name: rel_hosts_x_users
+    source: hosts
+    target: users
+    columns:
+      - source: user_id
+        target: id
+
+  - name: rel_reviews_x_bookings
+    source: reviews
+    target: bookings
+    columns:
+      - source: booking_id
+        target: id

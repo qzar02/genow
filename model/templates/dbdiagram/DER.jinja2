@@ -1,0 +1,13 @@
+{%- for table in tables -%}
+Table {{table.name}} {
+{% for column in table.columns %}
+  {{column.name}} {{column.dtype}}
+{% endfor %}
+}
+{% endfor %}
+
+{%- for relationship in relationships -%}
+{%- for column in relationship.columns -%}
+Ref: {{relationship.source}}.{{column.source}} > {{relationship.target}}.{{column.target}}
+{% endfor -%}
+{%- endfor -%}

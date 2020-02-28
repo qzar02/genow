@@ -13,17 +13,19 @@ table:
     columns:
       type: list
       schema:
-        name:
-          type: string
-        dtype:
-          type: string
-          allowed:
-            - string
-            - integer
-            - double
-            - boolean
-            - date
-            - float
+        type: dict
+        schema:
+          name:
+            type: string
+          dtype:
+            type: string
+            allowed:
+              - string
+              - integer
+              - double
+              - boolean
+              - date
+              - float
 
 entity:
   item_title: entity
@@ -40,17 +42,19 @@ entity:
     columns:
       type: list
       schema:
-        name:
-          type: string
-        dtype:
-          type: string
-          allowed:
-            - string
-            - integer
-            - double
-            - boolean
-            - date
-            - float
+        type: dict
+        schema:
+          name:
+            type: string
+          dtype:
+            type: string
+            allowed:
+              - string
+              - integer
+              - double
+              - boolean
+              - date
+              - float
 
 dataset:
   item_title: dataset
@@ -66,17 +70,19 @@ dataset:
     columns:
       type: list
       schema:
-        name:
-          type: string
-        dtype:
-          type: string
-          allowed:
-            - string
-            - integer
-            - double
-            - boolean
-            - date
-            - float
+        type: dict
+        schema:
+          name:
+            type: string
+          dtype:
+            type: string
+            allowed:
+              - string
+              - integer
+              - double
+              - boolean
+              - date
+              - float
 
 relationship:
   item_title: relationship
@@ -87,7 +93,7 @@ relationship:
     name:
       type: string
       required: true
-
+      unique: true
     source:
       type: string
       required: true
@@ -99,6 +105,15 @@ relationship:
     columns:
       type: list
       required: true
+      schema:
+        type: dict
+        schema:
+          source:
+            type: string
+            required: true
+          target:
+            type: string
+            required: true
 
 pipeline:
   item_title: pipeline

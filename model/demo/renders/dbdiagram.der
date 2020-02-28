@@ -1,0 +1,78 @@
+Table users {
+
+  id integer
+
+  email string
+
+}
+Table bookings {
+
+  id integer
+
+  user_id integer
+
+  place_id integer
+
+  start_date date
+
+  end_date date
+
+  price_per_night float
+
+  num_nights integer
+
+}
+Table places {
+
+  id integer
+
+  host_id integer
+
+  address string
+
+  city_id string
+
+}
+Table reviews {
+
+  id integer
+
+  booking_id integer
+
+  rating integer
+
+  review_body string
+
+}
+Table hosts {
+
+  id integer
+
+  user_id integer
+
+}
+Table cities {
+
+  id integer
+
+  name string
+
+  country_id integer
+
+}
+Table country {
+
+  id integer
+
+  name string
+
+  continent_name string
+
+}
+Ref: cities.country_id > country.id
+Ref: places.host_id > hosts.id
+Ref: bookings.user_id > users.id
+Ref: bookings.place_id > places.id
+Ref: places.city_id > cities.id
+Ref: hosts.user_id > users.id
+Ref: reviews.booking_id > bookings.id
