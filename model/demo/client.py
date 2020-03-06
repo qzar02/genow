@@ -1,5 +1,6 @@
-import requests
 import json
+
+import requests
 import yaml
 
 URL_API = "http://localhost:5000"

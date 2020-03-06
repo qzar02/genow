@@ -12,7 +12,7 @@ relationships = session.get(f"{URL_API}/relationship").json()['_items']
 
 render = (
     env
-    .get_template('dbdiagram/DER.jinja2')
+    .get_template('airflow/dummy/dag.jinja2')
     .render(
         tables=tables,
         relationships=relationships)
